@@ -87,7 +87,7 @@ app.post('/', (req, res) => {
         const currentWeight = weightOfProducts.get(currentLocation);
         
         if (currentWeight % 5 === 0 && currentWeight / 5 > 0) {
-            totalCost += (10 + 8 * Math.floor(currentWeight / 5) - 1) * nextLocationCost;
+            totalCost += (10 + 8 * (Math.floor(currentWeight / 5) - 1)) * nextLocationCost;
         }
         else if (currentWeight % 5 !== 0) {
             totalCost += (10 + 8 * Math.floor(currentWeight / 5)) * nextLocationCost;
